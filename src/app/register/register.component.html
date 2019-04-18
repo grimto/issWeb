@@ -1,3 +1,38 @@
-<p>
-  register works!
-</p>
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">User Name</label>
+        <input type="text" class="form-control" formControlName="user_name" #user_name />
+      </div>
+      <div *ngIf="angForm.controls['user_name'].invalid && (angForm.controls['user_name'].dirty || angForm.controls['user_name'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['user_name'].errors.required">
+          User Name is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Password </label>
+        <input type="text" class="form-control" formControlName="business_name" #password />
+      </div>
+      <div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['password'].errors.required">
+          Password is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Confirm Password </label>
+        <input type="text" class="form-control" formControlName="cpassword" #cpassword />
+      </div>
+      <div *ngIf="angForm.controls['cpassword'].invalid && (angForm.controls['cpassword'].dirty || angForm.controls['cpassword'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['cpassword'].errors.required">
+          Rewrite Password required.
+        </div>
+      </div>
+      <div class="form-group">
+        <button (click)="addUser(user_name.value, password.value, cpassword.value)"
+                [disabled]="angForm.pristine || angForm.invalid"
+                class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
