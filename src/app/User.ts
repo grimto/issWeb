@@ -1,4 +1,8 @@
-export default class User {
-  user_name: string;
+export class User {
+  id: string;
+  userName: string;
   password: string;
+  Humidity: string [];
+  Temperature: string [];
+  Moisture: string [];
 }

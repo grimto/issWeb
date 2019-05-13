@@ -8,12 +8,18 @@ import {DemeterSlogComponent} from './demeter-slog/demeter-slog.component';
 import {DownloadComponent} from './download/download.component';
 import {FeaturesComponent} from './features/features.component';
 import {TeamComponent} from './team/team.component';
-import {RouterModule} from '@angular/router';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {AppRoutingModule} from './app-routing.module';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {UserService} from './user.service';
+import { UsersComponent } from './users/users.component';
+import { ComponentsComponent } from './components/components.component';
+import {AuthenticationService} from './services/authentication.service';
+import {AlertService, UsersService} from './_services';
+import { LogedComponent } from './loged/loged.component';
+import { ChartComponent } from './chart/chart.component';
+import { ChartsModule} from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -25,13 +31,19 @@ import {UserService} from './user.service';
     FeaturesComponent,
     TeamComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UsersComponent,
+    ComponentsComponent,
+    LogedComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ChartsModule
   ],
   bootstrap: [AppComponent],
   providers: [UserService]

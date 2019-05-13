@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Catamaran:200,300,400,500,600,700,900');
-
 /*!
  * Created by Kroplet (https://www.kroplet.com)
  * The easiest way to create Bootstrap 4 themes.
@@ -15,7 +14,9 @@ body {
   font-family: 'Catamaran', sans-serif;
   font-size: 16px;
 }
-
+.regLog{
+  margin-top: 100px;
+}
 .navbar-brand {
   font-weight: 900;
   color: #fff;
@@ -6940,7 +6941,7 @@ button.bg-dark:hover {
   }
 
   .justify-content-sm-around {
-    -ms-flex-pack: distribute !important;
+    -ms-flex-pack:  distribute !important;
     justify-content: space-around !important;
   }
 
